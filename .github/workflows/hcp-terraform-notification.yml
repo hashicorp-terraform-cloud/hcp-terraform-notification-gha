@@ -19,10 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Print entire workspace data
-        run: echo "Workspace data: ${{ toJson(github.event.workspace_data) }}"
-
       - name: Access specific fields in workspace data
         run: |
           echo "Run ID: ${{ github.event.workspace_data.run_id }}"
-          echo "Workspace Slug: ${{ github.event.workspace_data.workspace_slug }}"
+          echo "Workspace Slug: ${{ github.event.client_payload.workspace_slug }}"
