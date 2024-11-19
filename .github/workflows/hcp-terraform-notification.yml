@@ -6,7 +6,7 @@ name: HCP Terraform Notification
 on:
   repository_dispatch:
     types:
-      - external-trigger
+      - hcp-terraform-workspace
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
