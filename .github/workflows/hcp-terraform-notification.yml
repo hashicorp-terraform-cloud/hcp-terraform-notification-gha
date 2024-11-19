@@ -19,9 +19,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Print entire workspace data
+        run: echo "Workspace data: ${{ toJson(github.event.workspace_data) }}"
 
-      # Runs a single command using the runners shell to extract the content of the payload
-      - name: Print entire client payload
-        run: echo "Client payload: ${{ toJson(github.event.workspace_data) }}"
+      - name: Access specific fields in workspace data
+        run: |
+          echo "Run ID: ${{ github.event.workspace_data.run_id }}"
+          echo "Workspace Slug: ${{ github.event.workspace_data.workspace_slug }}"
