@@ -1,3 +1,4 @@
 FROM hashicorp/tfc-agent:latest
 
+# See https://developer.hashicorp.com/terraform/cloud-docs/agents/hooks
 ADD --chown=tfc-agent:tfc-agent hooks /home/tfc-agent/.tfc-agent/hooks
