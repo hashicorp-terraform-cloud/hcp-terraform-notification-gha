@@ -1,0 +1,18 @@
+#!/bin/bash
+set -eo pipefail
+
+if [ -n "$GITHUB_ACTIONS_PAT_TOKEN" ] && [ -n "$GITHUB_ACTIONS_DISPATCH_ENDPOINT" ]; then
+  curl -X POST \
+    -H "Authorization: token $GITHUB_ACTIONS_PAT_TOKEN" \
+    -H "Accept: application/vnd.github.v3+json" \
+    $GITHUB_ACTIONS_DISPATCH_ENDPOINT \
+    -d "{
+        \"event_type\": \"hcp-terraform-workspace\",
+        \"client_payload\": {
+          \"run_id\": \"$ATLAS_RUN_ID\",
+          \"workspace_slug\": \"$ATLAS_WORKSPACE_SLUG\"
+        }
+    }"
+else
+  echo "Required environment variables GITHUB_ACTIONS_PAT_TOKEN and GITHUB_ACTIONS_DISPATCH_ENDPOINT are not set."
+fi

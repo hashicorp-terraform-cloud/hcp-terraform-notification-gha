@@ -1,0 +1,3 @@
+FROM hashicorp/tfc-agent:latest
+
+ADD --chown=tfc-agent:tfc-agent hooks /home/tfc-agent/.tfc-agent/hooks
