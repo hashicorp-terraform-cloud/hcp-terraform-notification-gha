@@ -21,6 +21,7 @@ git clone https://github.com/your-username/hcp-terraform-notification-gha.git
 See [the documentation on custom hooks](https://developer.hashicorp.com/terraform/cloud-docs/agents/hooks) for more details.
 
 ```sh
+cd agent/
 podman build -t hashicorp/tfc-agent:gha .
 ```
 
