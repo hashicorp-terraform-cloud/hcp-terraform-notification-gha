@@ -49,3 +49,9 @@ GITHUB_ACTIONS_DISPATCH_ENDPOINT=https://api.github.com/repos/<org>/<repository>
 * Execute a Terraform run on that workspace
 
 Depending on the hook type you've configured, you should see your GHA trigger at the appropriate stage of the TF run.
+
+## A more comprehensive example
+
+This repository is a comprehensive boilerplate customer agent.
+
+https://github.com/straubt1/terraform-agent-mod
