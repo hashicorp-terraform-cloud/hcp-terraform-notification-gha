@@ -1,6 +1,6 @@
 # hcp-terraform-notification-gha
 
-This repository provides an example of integrating HashiCorp Cloud Platform (HCP) Terraform with GitHub Actions for notifications.
+This repository provides an example of integrating HashiCorp Cloud Platform (HCP) Terraform with GitHub Actions, allowing HCP Terraform events to trigger GitHub Actions workflows.
 
 ## Prerequisites
 
